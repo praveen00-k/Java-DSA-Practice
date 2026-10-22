@@ -28,3 +28,7 @@ public class methods
     //System.out.println(x);//we can not call the x value in the main method
   }
 }
+
+
+
+//how deleted file can be recovered from the laptop and mobile & read about the storage and get know about it.
