@@ -1,41 +1,41 @@
 import java.util.List;
 import java.util.ArrayList;
 public class CyclicSort {
-  // public static int missingNumber(int[] nums)
-  // {
-  //   if(nums == null || nums.length == 0)
-  //   {
-  //     return -1;
-  //   }
+  public static int missingNumber(int[] nums)
+  {
+    if(nums == null || nums.length == 0)
+    {
+      return -1;
+    }
 
-  //    int i = 0;
-  //       while(i < nums.length)
-  //       {
-  //           int correct = nums[i];
-  //           if( nums[i]< nums.length && nums[i] != nums[correct])
-  //           {
-  //              int temp = nums[i];
-  //              nums[i]  = nums[correct];
-  //              nums[correct] = temp;
+     int i = 0;
+        while(i < nums.length)
+        {
+            int correct = nums[i];
+            if( nums[i]< nums.length && nums[i] != nums[correct])
+            {
+               int temp = nums[i];
+               nums[i]  = nums[correct];
+               nums[correct] = temp;
     
-  //           }
-  //           else
-  //           {
-  //               i++;
-  //           }
-  //       }
+            }
+            else
+            {
+                i++;
+            }
+        }
 
-  //       //search for 1st missing number
-  //       for( int j = 0; j < nums.length; j++)
-  //       {
-  //           if(nums[j] != j)
-  //           {
-  //               return j;
-  //           }
-  //       }
-  //       //case 2
-  //       return nums.length;
-  // }
+        //search for 1st missing number
+        for( int j = 0; j < nums.length; j++)
+        {
+            if(nums[j] != j)
+            {
+                return j;
+            }
+        }
+        //case 2
+        return nums.length;
+  }
 
   public static List<Integer> findDisappearedNumbers(int[] nums) {
     List<Integer> result = new ArrayList<>();
