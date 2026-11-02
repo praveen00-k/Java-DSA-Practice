@@ -70,11 +70,7 @@ public class TWODArray {
   // wwrite a function to print a 3*3 2d array
   public static void print3x3Array(int[][] arr)
   {
-    if(arr.length != 3 || arr[0].length != 3)
-    {
-      System.out.println("Array is not 3x3");
-      return;
-    }
+    
     for(int  i = 0; i < arr.length; i++)
     {
       for(int  j = 0; j < arr[i].length; j++)
@@ -84,9 +80,58 @@ public class TWODArray {
       System.out.println();
     }
   }
+  // print the paticluar row in 2d array
+  public static void printParticularRow(int[][] arr, int row)
+  {
+     int rowIndex = row - 1; // Adjust for 0-based indexing
+    if(row <= 0 || row > arr.length) {
+      System.out.println("Invalid row index.");
+      return;
+    }
+    for(int i = 0 ; i < arr[rowIndex].length; i++)
+    {
+      System.out.print(arr[rowIndex][i] + " ");
+    }
+    System.out.println();
+  }
 
-  //
-  
+  //print particular colum in 2d array
+  public static void printParticularColumn(int[][] arr, int col)
+  {
+    int colIndex = col - 1; // Adjust for 0-based indexing
+    if(col <= 0 || col > arr[0].length) {
+      System.out.println("Invalid column index.");
+      return;
+    }
+    for(int i = 0; i < arr.length; i++)
+    {
+      if(colIndex < arr[i].length) {
+        System.out.print(arr[i][colIndex] + " ");
+      } else {
+        System.out.print("N/A ");
+      }
+    }
+    System.out.println();
+  }
+  // print diagonal elements of 2d array
+  public static void printDiagonalElements(int[][] arr)
+  {
+    System.out.println("left to right Diagonal Elements:");
+    for (int i = 0; i < arr.length; i++) {
+      for (int j = 0; j < arr[i].length; j++) {
+        if (i == j) {
+          System.out.print(arr[i][j] + " ");
+        }
+      }
+    }
+    System.out.println();
+
+    System.out.println("right to left Diagonal Elements:");
+    for (int i = 0; i < arr.length; i++) {
+      System.out.print(arr[i][arr.length - 1 - i] + " ");
+    }
+    System.out.println();
+  }
 
   public static void main(String[] args)
   {
@@ -100,6 +145,21 @@ public class TWODArray {
     };
     print3x3Array(arr);
     System.out.println();
+
+    System.out.println("Printing particular row");
+    printParticularRow(arr,5);
+    System.out.println();
+
+    System.out.println("Printing particular column");
+    printParticularColumn(arr,5);
+    System.out.println();
+
+    System.out.println("Printing diagonal elements");
+    printDiagonalElements(arr);
+    System.out.println();
+
+    // printParticularColumnJagged(arr);
+    
     // printArray(arr);
     // System.out.println();
 
@@ -122,7 +182,7 @@ public class TWODArray {
     // printArray(result);
     // System.out.println();
 
-    int [] [] result2 = multiplyTwo2DArray(arr1, arr2);
-    printArray(result2);
+    // int [] [] result2 = multiplyTwo2DArray(arr1, arr2);
+    // printArray(result2);
   }
 }
