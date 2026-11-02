@@ -8,17 +8,15 @@ class Solution {
     System.out.println(result);
   }
 
-  static int[] maximumWealth(int[][] accounts)
+  static int[] maximumWealth(int[][] arr)
   {
-    int sum = 0;
-    for(int []num : accounts){
-      for(int count :num){
-        sum +=count;
+    for( int []num : arr)
+    {
+      for( int num1 : num)
+      {
+        System.out.println(num1);
       }
-      
     }
-    return new int[]{sum};
-
-    
+    return new int[0]; // Placeholder return, replace with actual logic
   }
 }

@@ -1,5 +1,5 @@
 
-public class Main {
+public class Main1{
 
     static void mergeSort(int[] arr, int left, int right) {
 

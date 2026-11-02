@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 public class sellAndProfit {
   public static int maxProfitStock(int[] stock)
   {
