@@ -618,7 +618,37 @@ public class twoSm {
         return bestProfit;
     }
 
-    
+    //1470 shuffle the array
+    public static int[] shuffleArray(int[] nums, int n)
+    {
+        int[] result = new int[nums.length];
+        for(int i = 0; i <n; i++)
+        {
+            result[i*2] = nums[i];
+            result[i*2 + 1] = nums[i+n];
+            
+        }
+        return result;
+    }
+
+    //1342. Number of Steps to Reduce a Number to Zero
+    public static int numberOfSteps(int num)
+    {
+        int step = 0;
+        while(num > 0)
+        {
+            if( num % 2 == 0)
+            {
+                num /= 2;
+            }
+            else
+            {
+                num -= 1;
+            }
+            step++;
+        }
+        return step;
+    }
 
   public static void main(String[] args) {
     int ravi[] = {1, 4, 6, 8, 10};
@@ -663,5 +693,6 @@ public class twoSm {
         // System.out.println("after the sorting the array: ");
         // printArray(arr);
 
+        System.out.println(Arrays.toString(shuffleArray(new int[]{2, 5, 1, 3, 4, 7}, 3)));
   }
 }
