@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 public class TWODArray {
   //1st method to print 2d array
   public static int [] [] printArray(int[] [] arr)
@@ -43,8 +43,9 @@ public class TWODArray {
   }
 
   //4th method to multiply two 2d array and store result in 3rd array
-  public static int [] [] multiplyTwo2DArray( int [] [] arr1, int [] [] arr2)
+  public static int [][] multiplyTwo2DArray( int [] [] arr1, int [] [] arr2)
   {
+    
     int result[][] = new int[arr1.length][arr2[0].length];
     for(int i = 0; i< arr1.length; i++)
     {
@@ -422,6 +423,144 @@ public class TWODArray {
     }
     return result;
   }
+
+  //832. Flipping an Image
+  public static int[][] flipAndInvertImage(int[][] arr)
+  {
+    for( int i = 0; i <arr.length; i++)
+    {
+
+      int start = 0;
+      int end = arr[i].length-1;
+
+      while(start <= end)
+      {
+        // swap element
+        int temp = arr[i][start];
+        arr[i][start] = arr[i][end];
+        arr[i][end] = temp;
+
+        //invers the elements
+        if(arr[i][start] == 0)
+        {
+          arr[i][start] = 1;
+        }
+        else{
+          arr[i][start] = 0;
+        }
+        if(start != end)
+        {
+            if(arr[i][end] == 0)
+          {
+            arr[i][end] = 1;
+          }
+          else{
+            arr[i][end] = 0;
+          }
+        }
+
+        
+
+        start++;
+        end--;
+      }
+    }
+    return arr;
+    
+  }
+
+
+  //1351. Count Negative Numbers in a Sorted Matrix
+  public static int CountNegativeNumber(int[][] matrix)
+  {
+    int count = 0;
+    for( int i = 0; i < matrix.length; i++)
+    {
+      
+      for(int j = 0; j < matrix[0].length; j++)
+      {
+        if(matrix[i][j] < 0)
+        {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+
+  // print the boundary elements in an 2D array
+  public static void boundaryElements(int[][]arr)
+  {
+    for(int i = 0; i < arr.length; i++)
+    {
+      for(int j = 0; j < arr[i].length; j++)
+      {
+        if(i == 0 || j == 0 || i == arr.length-1 || j == arr[i].length-1)
+        {
+          System.out.print(arr[i][j] + "  ");
+        }
+        else{
+          System.out.print("   ");
+        }
+      }
+      System.out.println();
+    }
+  }
+
+  //1380 leetcode problem lucky number in a matrix
+  public static List<Integer> luckyNumbers(int[][] matrix)
+  {
+    List<Integer> ans = new ArrayList<>();
+        for(int  i = 0; i < matrix.length; i++)
+        {
+          int min = matrix[i][0];
+          int col =0;
+
+          //find minmum in a row
+          for(int j = 1; j < matrix[i].length; j++)
+          {
+            if(matrix[i][j] < min)
+            {
+              min = matrix[i][j];
+              col = j;
+            }
+          }
+
+          //find whether it is max in it col
+          boolean islucky = true;
+          for(int k = 0; k < matrix.length; k++)
+          {
+            if(matrix[k][col] >min)
+            {
+              islucky = false;
+              break;
+            }
+          }
+          if(islucky)
+          {
+            ans.add(min);
+          }
+        }
+        return ans;
+  }
+
+  //74 leetcode problem: search a 2D matrix
+   public static boolean searchMatrix(int[][] matrix, int target)
+   {
+        for(int i = 0; i < matrix.length; i++)
+        {
+          for(int j =0; j < matrix[i].length; j++)
+          {
+            if( matrix[i][j] == target)
+            {
+              return true;
+            }
+            
+          }
+        }
+        return false;
+   }
+  
   public static void main(String[] args)
   {
     int [] [] arr = 
@@ -617,5 +756,44 @@ public class TWODArray {
       System.out.println(Arrays.toString(row));
     }
     System.out.println();
+
+    //832 flipping the image
+    int[][] image = {
+        {1, 1, 0},
+        {1, 0, 1},
+        {0, 0, 0}
+      };
+
+      int[][] result1 = flipAndInvertImage(image);
+
+        for (int i = 0; i < result1.length; i++) {
+          for (int j = 0; j < result1[i].length; j++) {
+              System.out.print(result1[i][j] + " ");
+          }
+          System.out.println();
+      }
+
+      //1351 count negative numbers in sorted matrix
+      int [][] matrix1 = {
+        {4,3,2,1},
+        {3,2,1,1},
+        {1,1,1,2},
+        {1,1,2,3}
+      };
+
+      int ans3 = CountNegativeNumber(matrix1);
+      System.out.println(ans3);
+
+
+      //boundary element print
+      boundaryElements(matrix1);
+
+
+      //lucky number in matrix
+      System.out.println(luckyNumbers(matrix));
+
+      //74 leetcode problem: search a 2d matrix
+      System.out.println(searchMatrix(matrix,-1));
+
   }
 }

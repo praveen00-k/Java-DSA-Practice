@@ -45,6 +45,23 @@ public class TestArray{
         }
       }
   }
+
+      //accepts math experssion as string retrun true if braces are balanced else false
+  static boolean checkBracesBalance(String expression) {
+    int balance = 0;
+    for (char c : expression.toCharArray()) {
+      if (c == '(') {
+        balance++;
+      } else if (c == ')') {
+        balance--;
+        if (balance < 0) {
+          return false;
+        }
+      }
+    }
+    return balance == 0;
+  }
+
   public static void main(String[] args) {
     System.out.println("sorted array");
     int arr[] = {10,20,-30,40,50};
@@ -57,7 +74,10 @@ public class TestArray{
     CompareNumberInUnsortedArray(num , number);
 
 
-
+    //accepts math experssion as string retrun true if braces are balanced else false
+    String expression = "((a+b)*(c-d))";
+    boolean isBalanced = checkBracesBalance(expression);
+    System.out.println("The expression '" + expression + "' has balanced braces: " + isBalanced);
 
   }
 }

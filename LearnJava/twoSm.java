@@ -650,6 +650,36 @@ public class twoSm {
         return step;
     }
 
+    //75 leetcode problem:Sort Colors
+    public static void sortColors(int[] nums)
+    {
+        int start = 0;
+        int mid = 0;
+        int end = nums.length - 1;
+        while(mid <= end)
+        {
+            if(nums[mid] ==0)
+            {
+                int temp = nums[mid];
+                nums[mid] = nums[start];
+                nums[start] = temp;
+                mid++;
+                start++;
+            }else if(nums[mid] == 1)
+            {
+                mid++;
+            }
+            else
+            {
+                int temp = nums[mid];
+                nums[mid] = nums[end];
+                nums[end]= temp;
+                end--;
+            }
+        }
+    }
+
+
   public static void main(String[] args) {
     int ravi[] = {1, 4, 6, 8, 10};
     int sita [] = {4, 8, 12};
@@ -694,5 +724,9 @@ public class twoSm {
         // printArray(arr);
 
         System.out.println(Arrays.toString(shuffleArray(new int[]{2, 5, 1, 3, 4, 7}, 3)));
-  }
+        System.out.println(numberOfSteps(14));
+        int[] nums = {2, 0, 2, 0, 1, 1};
+        sortColors(nums);
+        System.out.println(Arrays.toString(nums));
+      }
 }
