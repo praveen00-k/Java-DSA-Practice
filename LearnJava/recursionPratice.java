@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class recursionPratice {
 
   // //work after call
@@ -117,6 +119,52 @@ public class recursionPratice {
     
 
   }
+
+  public static void message()
+  {
+    System.out.println("Hello World");
+    message1();
+  }
+  static void message1()
+  {
+    System.out.println("Hello World");
+    message2();
+  }
+  static void message2()
+  {
+    System.out.println("Hello World");
+    message3();
+  }
+  static void message3()
+  {
+    System.out.println("Hello World");
+    message4();
+  }
+  static void message4()
+  {
+    System.out.println("Hello World");
+  }
+
+  public static void PrintNumber(int num)
+  {
+    if(num == 5)
+    {
+      System.out.println(5);
+      return;
+    }
+    System.out.println(num);
+    PrintNumber(num+1);
+  }
+
+  //fibonaci series
+  static int fibo(int n)
+  {
+    if(n < 2)
+    {
+      return n;
+    }
+    return fibo(n-1)+fibo(n-2);
+  }
   public static void main(String[] args) {
 
     // fun(3);
@@ -125,7 +173,18 @@ public class recursionPratice {
     // System.out.println(printNumber(8));
     // System.out.println(sumNumber(5));
     // System.out.println(factorial(4));
-    System.out.println(sumOfDigit(121));
-    System.out.println(reverseDigit(4856));
+    // System.out.println(sumOfDigit(121));
+    // System.out.println(reverseDigit(4856));
+    // message();
+
+    //print a function that takes in a number and print it
+    //print first 5 number: 1 2 3 4 5
+    // Scanner sc = new Scanner(System.in);
+    // System.out.println("Enter your Number: ");
+    // int num = sc.nextInt();
+    // PrintNumber(num);
+
+    System.out.println(fibo(50));
+    // sc.close();
   }
 }

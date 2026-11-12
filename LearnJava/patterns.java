@@ -171,5 +171,78 @@ System.out.println("============<<==>>=============");
     System.out.println("5. Number Triangle");
     System.out.println("6. Character Triangle");
     System.out.println("7. Exit");
+
+
+    // pratice of patterns
+    //1
+    for(int  i = 1; i <=5; i++)
+    {
+      for(int j = 1; j <=5; j++)
+      {
+        System.out.print("x ");
+      }
+      System.out.println();
+    }
+
+    //2
+    for(int i = 1; i <= 5; i++)
+    {
+      for(int  j = 1; j <= i; j++)
+      {
+        System.out.print("x ");
+      }
+      System.out.println();
+    }
+    //2 number print
+    for(int i = 1; i <= 5; i++)
+    {
+      for(int  j = 1; j <= i; j++)
+      {
+        System.out.print(j);
+      }
+      System.out.println();
+    }
+
+    System.out.println();
+
+    //3
+    for(int i = 1; i <= 5; i++)
+    {
+      for(int j = 1; j <=5-i+1; j++)
+      {
+        System.out.print(j);
+      }
+      System.out.println();
+    }
+
+    //3 "x " print
+    for(int i = 1; i <=5 ; i++)
+    {
+      for(int j = 1; j <=5-i+1; j++)
+      {
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
+
+    System.out.println();
+
+    //4th patter
+    for(int i = 1; i <=5; i++)
+    {
+      for(int j = 1; j <=i; j++)
+      {
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
+    for(int k =1; k<5; k++ )
+    {
+      for(int j= 1; j<=5-k; j++)
+      {
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
   }
 }

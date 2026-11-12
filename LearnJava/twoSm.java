@@ -679,12 +679,42 @@ public class twoSm {
         }
     }
 
+    //136. Single Number
+    public static int singleNumber(int[] nums) 
+    {
+        if(nums == null || nums.length == 0)
+        {
+            return -1;
+        }
+
+        for(int  i = 0; i < nums.length; i++)
+        {
+            int count = 0;
+            for(int j = 0; j <nums.length; j++)
+            {
+                if(nums[i] == nums[j])
+                {
+                    count++;
+
+                    
+                }
+            }
+            if(count == 1)
+            {
+                return nums[i];
+            }
+
+        }
+        return -1;
+    }
 
   public static void main(String[] args) {
-    int ravi[] = {1, 4, 6, 8, 10};
-    int sita [] = {4, 8, 12};
-    System.out.println(Arrays.toString(printNumber(ravi, sita)));
-    System.out.println(presentNumber(ravi, sita));
+    int[] arr = {1,2,2};
+    System.out.println(singleNumber(arr));
+    // int ravi[] = {1, 4, 6, 8, 10};
+    // int sita [] = {4, 8, 12};
+    // System.out.println(Arrays.toString(printNumber(ravi, sita)));
+    // System.out.println(presentNumber(ravi, sita));
     // System.out.println(Arrays.toString(biggerNumber(ravi, sita)));
     // System.out.println(countRavi(ravi,sita));
     
@@ -723,10 +753,10 @@ public class twoSm {
         // System.out.println("after the sorting the array: ");
         // printArray(arr);
 
-        System.out.println(Arrays.toString(shuffleArray(new int[]{2, 5, 1, 3, 4, 7}, 3)));
-        System.out.println(numberOfSteps(14));
-        int[] nums = {2, 0, 2, 0, 1, 1};
-        sortColors(nums);
-        System.out.println(Arrays.toString(nums));
+        // System.out.println(Arrays.toString(shuffleArray(new int[]{2, 5, 1, 3, 4, 7}, 3)));
+        // System.out.println(numberOfSteps(14));
+        // int[] nums = {2, 0, 2, 0, 1, 1};
+        // sortColors(nums);
+        // System.out.println(Arrays.toString(nums));
       }
 }
